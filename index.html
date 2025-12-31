@@ -5,6 +5,7 @@
     <meta name="google-site-verification" content="RgKlmSFZiwq70tCnWg2m_rEXuKicKDsNLgLy4AkKErM" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abaan Khan | Portfolio</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,36 +13,72 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        .profile-img {
-        width: 250px;
-        height: 250px;     
-        border-radius: 50%;
-        object-fit: cover;
-    }
+
         header {
-            background: #dad1d1;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            padding: 30px;
+            padding: 40px;
             text-align: center;
         }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+
         section {
             padding: 20px;
             margin: 20px;
             background: white;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
+
         h2 {
             color: #333;
         }
+
         ul {
             list-style-type: square;
         }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 12px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        /* Dropdown */
+        .dropdown {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             background: #222;
             color: white;
         }
+
         a {
             color: #0066cc;
             text-decoration: none;
@@ -50,47 +87,71 @@
 </head>
 <body>
 
-    <header>
-        <img src="https://imgs.search.brave.com/sOP2J5KW6Grwg0S8woDUJKLJ6lgQt-8uwlzJO3dxkZw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9w/cm9ncmFtbWluZy1i/YWNrZ3JvdW5kLXdp/dGgtcGVyc29uLXdv/cmtpbmctd2l0aC1j/b2Rlcy1jb21wdXRl/cl8yMy0yMTUwMDEw/MTI5LmpwZz9zZW10/PWFpc19oeWJyaWQm/dz03NDAmcT04MA" alt="CODER" class="profile-img">
-        <h1>Abaan Khan</h1>
-        <p>Web Developer | Student</p>
-    </header>
+<header>
+    <img src="https://imgs.search.brave.com/sOP2J5KW6Grwg0S8woDUJKLJ6lgQt-8uwlzJO3dxkZw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9w/cm9ncmFtbWluZy1i/YWNrZ3JvdW5kLXdp/dGgtcGVyc29uLXdv/cmtpbmctd2l0aC1j/b2Rlcy1jb21wdXRl/cl8yMy0yMTUwMDEw/MTI5LmpwZz9zZW10/PWFpc19oeWJyaWQm/dz03NDAmcT04MA"
+         alt="CODER" class="profile-img">
+    <h1>Abaan Khan</h1>
+    <p>Web Developer | Student</p>
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-            Hi! I am Abaan, a beginner web developer learning HTML, CSS, and JavaScript.
-            I love building simple websites and learning new technologies.
-        </p>
-    </section>
+    <!-- Buttons -->
+    <a href="#contact" class="btn">Contact Me</a>
+    <a href="#" class="btn">Download Resume</a>
+</header>
 
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript (Basics)</li>
-            <li>Git & GitHub</li>
-        </ul>
-    </section>
+<section>
+    <h2>About Me</h2>
+    <p>
+        Hi! I am Abaan, a beginner web developer currently learning HTML, CSS, and JavaScript.
+        I enjoy building simple, responsive websites and turning ideas into real web pages.
+        My goal is to become a skilled full-stack developer and create meaningful user-friendly experiences.
+    </p>
+</section>
 
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li>Personal Portfolio Website</li>
-            <li>Form Validation Project</li>
-        </ul>
-    </section>
+<section>
+    <h2>Skills</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript (Basics)</li>
+        <li>Git & GitHub</li>
+    </ul>
+</section>
 
-    <section>
-        <h2>Contact</h2>
-        <p>Email: abaan.khan@gmail.com</p>
-        <p>GitHub: <a href="https://github.com/abaankhan25" target="_blank">github.com/abaankhan25</a></p>
-    </section>
+<section>
+    <h2>Projects (Dropdown)</h2>
 
-    <footer>
-        <p>© 2025 Abaan Khan</p>
-    </footer>
+    <select class="dropdown" onchange="showProject(this.value)">
+        <option value="">-- Select a Project --</option>
+        <option value="portfolio">Personal Portfolio Website</option>
+        <option value="form">Form Validation Project</option>
+    </select>
+
+    <p id="project-info" style="margin-top:15px;"></p>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: abaan.khan@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/abaankhan25" target="_blank">github.com/abaankhan25</a></p>
+</section>
+
+<footer>
+    <p>© 2025 Abaan Khan</p>
+</footer>
+
+<script>
+    function showProject(project) {
+        let info = document.getElementById("project-info");
+
+        if (project === "portfolio") {
+            info.innerHTML = "📌 A responsive personal portfolio website built using HTML & CSS.";
+        } else if (project === "form") {
+            info.innerHTML = "📌 A JavaScript-based form validation project with error handling.";
+        } else {
+            info.innerHTML = "";
+        }
+    }
+</script>
 
 </body>
 </html>
