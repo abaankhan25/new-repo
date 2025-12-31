@@ -7,6 +7,41 @@
     <title>Abaan Khan | Portfolio</title>
 
     <style>
+       .skill {
+    margin-bottom: 15px;
+}
+
+.skill p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.skill-bar {
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.skill-level {
+    height: 100%;
+    width: 0;
+    border-radius: 20px;
+    animation: fillBar 2s ease forwards;
+}
+
+/* Skill percentages */
+.skill-level.html { width: 90%; background: #e34c26; }
+.skill-level.css  { width: 80%; background: #264de4; }
+.skill-level.js   { width: 65%; background: #f0db4f; }
+.skill-level.git  { width: 70%; background: #f1502f; }
+
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+}
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -109,12 +144,34 @@
 
 <section>
     <h2>Skills</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript (Basics)</li>
-        <li>Git & GitHub</li>
-    </ul>
+
+    <div class="skill">
+        <p>HTML</p>
+        <div class="skill-bar">
+            <div class="skill-level html"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <p>CSS</p>
+        <div class="skill-bar">
+            <div class="skill-level css"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <p>JavaScript</p>
+        <div class="skill-bar">
+            <div class="skill-level js"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <p>Git & GitHub</p>
+        <div class="skill-bar">
+            <div class="skill-level git"></div>
+        </div>
+    </div>
 </section>
 
 <section>
